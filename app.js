@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const postRoutes = require('./routes/PostRoutes')
+const commentRoutes = require('./routes/commmentRoutes');
 
 app.use(express.json());
 
@@ -14,6 +15,8 @@ var coroption={
 app.use(cors(coroption));
 
 app.use('/api/posts',postRoutes);
+
+app.use('/api/comments',commentRoutes);
 
 app.use('/',(req,res,next)=>{
     res.json({

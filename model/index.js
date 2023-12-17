@@ -23,6 +23,8 @@ db.Sequelize = Sequelize;
 
 db.posts = require('./postModel')(sequelize,DataTypes)
 
+db.comments = require('./commentModel')(sequelize,DataTypes)
+
 db.sequelize.sync({force:false}).then(()=>{
     console.log('synced')
 })

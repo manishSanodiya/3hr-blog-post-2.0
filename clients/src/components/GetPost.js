@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import Posts from "./Posts";
 
 const GetPost = () => {
   const [list, setList] = useState([]);
@@ -20,11 +21,7 @@ const GetPost = () => {
       <h1>POSTS</h1>
       {list.map((item) => {
         return (
-          <div className="post" key={item.id}>
-            <h4 className="image">{item.post}</h4> <p>{item.desc}</p>
-            comments
-            <input type="text" onChange={(e)=> {}}/>
-          </div>
+        <Posts item={item} />
         );
       })}
     </div>

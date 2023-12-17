@@ -1,4 +1,4 @@
-const db = require('../model');
+const db = require('../model/');
 
 const Post = db.posts;
 
