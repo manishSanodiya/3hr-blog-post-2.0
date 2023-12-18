@@ -18,11 +18,18 @@ app.use('/api/posts',postRoutes);
 
 app.use('/api/comments',commentRoutes);
 
+//associations
+
+
+
+
 app.use('/',(req,res,next)=>{
     res.json({
         name: 'manish sanodiya'
     })
 })
+
+
 
 const PORT = process.env.PORT || 4500;
 

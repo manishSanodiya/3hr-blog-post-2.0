@@ -8,7 +8,7 @@ router.post('/addComment',commentController.addComments);
 
 router.get('/getComment',commentController.getComments);
 
-router.delete('/deleteComment',commentController.deleteComments);
+router.delete('/deleteComment/:id',commentController.deleteComments);
 
 
 module.exports = router;
