@@ -15,13 +15,13 @@ const GetPost = () => {
         .catch((err) => console.log(err));
     };
     getData();
-  }, []);
+  }, [list]);
   return (
     <div>
       <h1>POSTS</h1>
       {list.map((item) => {
         return (
-        <Posts item={item} />
+        <Posts key={item.id} item={item} />
         );
       })}
     </div>

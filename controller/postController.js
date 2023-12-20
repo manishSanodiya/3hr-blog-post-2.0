@@ -4,6 +4,7 @@ const Post = db.posts;
 
 const AddPost = async(req,res)=>{
     const obj = {
+        id:req.body.id,
         post : req.body.post,
         author: req.body.author,
         desc: req.body.desc

@@ -25,8 +25,12 @@ db.posts = require('./postModel')(sequelize,DataTypes)
 
 db.comments = require('./commentModel')(sequelize,DataTypes)
 
-db.sequelize.sync({force:false}).then(()=>{
+db.sequelize.sync({force:true}).then(()=>{
     console.log('synced')
 })
+//associations
+db.posts.hasMany(db.comments)
+db.comments.belongsTo(db.posts)
+
 
 module.exports=db;

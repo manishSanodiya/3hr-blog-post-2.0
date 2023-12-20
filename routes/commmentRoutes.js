@@ -6,7 +6,7 @@ const commentController = require('../controller/commentController');
 
 router.post('/addComment',commentController.addComments);
 
-router.get('/getComment',commentController.getComments);
+router.get('/getComment/:postId',commentController.getComments);
 
 router.delete('/deleteComment/:id',commentController.deleteComments);
 

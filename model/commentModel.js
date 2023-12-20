@@ -11,7 +11,9 @@ module.exports = (sequelize,DataTypes)=>{
                 type:DataTypes.STRING,
                 allowNull: false
             },
-         
+         postId:{
+            type:DataTypes.INTEGER
+         }
     })
 
     return Comment;

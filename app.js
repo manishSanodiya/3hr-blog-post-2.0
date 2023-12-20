@@ -12,7 +12,7 @@ var coroption={
     localhost:3000
 }
 
-app.use(cors(coroption));
+app.use(cors());
 
 app.use('/api/posts',postRoutes);
 
