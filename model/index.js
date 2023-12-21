@@ -13,8 +13,8 @@ const sequelize = new Sequelize(
 )
 
 sequelize.authenticate().then(()=>{
-    console.log('connected')
-}).catch((err)=>console.log(err));
+    console.log('database connected')
+}).catch((err)=>console.log('database connecting problem',err));
 
 const db = {};
 
@@ -28,6 +28,8 @@ db.comments = require('./commentModel')(sequelize,DataTypes)
 db.sequelize.sync({force:true}).then(()=>{
     console.log('synced')
 }).catch((err)=>console.log(err));
+
+
 //associations
 db.posts.hasMany(db.comments)
 db.comments.belongsTo(db.posts)

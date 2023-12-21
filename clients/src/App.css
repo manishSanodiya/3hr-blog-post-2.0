@@ -38,24 +38,35 @@
   }
 }
 
-.post{
+.post {
   height: 20rem;
   width: 20rem;
- margin:20px 10px ;
- border: 2px solid black;
-}
-.image{
-display:contents;
-height: 10rem;
-width: 10rem;
-margin: 5px;
-border: 1px solid black;
-overflow:hidden;
-justify-content: center;
-
+  margin: 20px 10px;
+  border: 2px solid black;
+  padding: 5px; /* Added padding for better spacing */
+  display: flex; /* Flex display to align items */
+  flex-direction: column; /* Align items vertically */
 }
 
-.comment{
-  padding: 1px;
+.post-content {
+  flex: 1; /* Takes remaining space inside post */
+}
+
+.image {
+  height: 10rem;
+  width: 10rem;
+  margin: 5px;
+  border: 1px solid black;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the image */
+}
+
+/* Comment Component */
+.comment {
+  padding: 10px; /* Increased padding for better readability */
   max-width: fit-content;
+  border: 1px solid #ccc; /* Added a border for separation */
+  margin: 10px 0; /* Adjusted margin */
 }
