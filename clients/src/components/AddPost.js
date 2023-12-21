@@ -14,7 +14,12 @@ const AddPost = () => {
     }
     const SubmitHandler = async(e)=>{
         e.preventDefault()
-      const res = await axios.post('api/posts/addPost',posts)
+        try{
+          const res = await axios.post('api/posts/addPost',posts)
+        }catch(err){
+          console.log('Error Adding The Post',err)
+        }
+     
     }
   return (
     <div>

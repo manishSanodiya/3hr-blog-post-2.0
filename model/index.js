@@ -27,7 +27,7 @@ db.comments = require('./commentModel')(sequelize,DataTypes)
 
 db.sequelize.sync({force:true}).then(()=>{
     console.log('synced')
-})
+}).catch((err)=>console.log(err));
 //associations
 db.posts.hasMany(db.comments)
 db.comments.belongsTo(db.posts)

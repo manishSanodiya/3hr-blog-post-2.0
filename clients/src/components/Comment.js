@@ -8,27 +8,41 @@ const Comment = ({item}) => {
   const [list,setList] = useState([]);
 
   const postId = item.id;
-// console.log(list)
+
   const com = {
     comment: c,
     postId: postId
   }
   const submitHandler = async(e)=>{
       e.preventDefault();
-     console.log(c)
-     const res = await axios.post(`api/comments/addComment`,com)
-     getComment()
+      try{
+        console.log(c)
+        const res = await axios.post(`api/comments/addComment`,com)
+        getComment()
+      }catch(err){
+        console.log("Error while adding comment",err)
+      }
+  
   }
   const getComment =async()=>{
-    const res = await axios.get(`api/comments/getComment/${postId}`)
-    const data = await res.data
-    setList(data);
+    try{
+      const res = await axios.get(`api/comments/getComment/${postId}`)
+      const data = await res.data
+      setList(data);
+    } catch (err){
+      console.log('Error Getting Comments',err)
+    }
+   
   } 
 
   const deleteComments = async(id)=>{
+   try{
     console.log(id);
     const res = await axios.delete(`api/comments/deleteComment/${id}`)
     
+  }catch (err){
+    console.log('Error Deleting Comments',err);
+  }
   }
   useEffect(()=>{
 

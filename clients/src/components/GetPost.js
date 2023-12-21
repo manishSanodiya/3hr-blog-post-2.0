@@ -12,7 +12,7 @@ const GetPost = () => {
         .then((res) => {
           setList(res.data);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log("Error Getting Post",err));
     };
     getData();
   }, [list]);
